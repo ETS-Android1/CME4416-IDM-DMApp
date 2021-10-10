@@ -1,0 +1,32 @@
+<resources>
+
+    <string name="app_name">DataMiningApp</string>
+
+    <string-array name="SelectAlgorithm">
+        <item>--Select an Algorithm--</item>
+        <item>k-Nearest Neighbor</item>
+        <item>Support Vector Machine</item>
+        <item>Random Forest</item>
+        <item>Neural Network</item>
+        <item>Decision Trees</item>
+        <item>Naive Bayes</item>
+
+    </string-array>
+
+    <string-array name="SelectDistanceMeasure">
+        <item>Euclidean Distance</item>
+        <item>Chebyshev Distance</item>
+        <item>Manhattan Distance</item>
+        <item>Minkowski Distance</item>
+    </string-array>
+
+    <string-array name="SelectKernel">
+        <item>Poly Kernel</item>
+        <item>Normalized Poly Kernel</item>
+        <item>Precomputed Kernel Matrix Kernel</item>
+        <item>Puk</item>
+        <item>RBF Kernel</item>
+        <item>String Kernel</item>
+
+    </string-array>
+</resources>

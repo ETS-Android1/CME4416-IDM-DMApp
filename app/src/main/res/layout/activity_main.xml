@@ -1,0 +1,856 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/selectFileRelativeLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:text="Select Fıle"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:background="#fff"
+                    android:textColor="#000"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_toEndOf="@id/button2"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginEnd="15dp"
+                    android:gravity="center"
+                    android:text="File Name" />
+
+            </RelativeLayout>
+
+
+
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_below="@+id/selectFileRelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/colorBlack" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/divider2"
+        android:layout_below="@+id/selectFileRelativeLayout"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_toEndOf="@+id/spinner"
+        android:background="@color/buttons"
+        android:text="run"
+        android:textColor="@color/text"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="242dp"
+        android:layout_alignParentStart="true"
+        android:layout_height="25dp"
+        android:layout_below="@+id/selectFileRelativeLayout"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:hint="Select Algorithm"/>
+
+    <RelativeLayout
+        android:id="@+id/radioGroupRelativeLayout"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_below="@id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/nFoldandPercentageRL"
+            android:layout_marginStart="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="160dp"
+                android:layout_height="35dp"
+                android:padding="5dp"
+                android:text="n-Fold Cross Validation"
+                android:textColor="#000" />
+
+            <TextView
+                android:layout_width="160dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="35dp"
+                android:padding="5dp"
+                android:ems="10"
+                android:text="Percentage Split"
+                android:textColor="#000"/>
+
+        </RelativeLayout>
+
+
+        <RadioGroup
+            android:id="@+id/rgroup"
+            android:layout_toEndOf="@+id/nFoldandPercentageRL"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp">
+
+            <RadioButton
+                android:id="@+id/radioButton8"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:onClick="rbclick"/>
+
+            <RadioButton
+                android:id="@+id/radioButton9"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:onClick="rbclick"/>
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:layout_alignStart="@+id/editText2"
+            android:inputType="numberDecimal"
+            android:padding="5dp"/>
+
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:padding="5dp"
+            android:layout_marginTop="35dp"
+            android:layout_toEndOf="@+id/rgroup"
+            android:inputType="numberDecimal"/>
+
+
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_below="@+id/radioGroupRelativeLayout"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/colorBlack" />
+
+    <ScrollView
+        android:id="@+id/parameterScroll"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:background="@color/colorWhite"
+        android:layout_width="match_parent"
+        android:layout_below="@id/radioGroupRelativeLayout"
+        android:layout_height="100dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:id="@+id/knnRelativeLayout"
+                android:layout_below="@+id/radioGroupRelativeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/knnParametersTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="5dp"
+                    android:text="kNN Extra Parameters" />
+
+                <TextView
+                    android:id="@+id/textViewKDist"
+                    android:layout_width="90dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="30dp"
+                    android:text="Distance :"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:gravity="end"
+                    android:textColor="#000"
+                    android:background="@color/colorWhite"/>
+
+                <Spinner
+                    android:id="@+id/spinner2"
+                    android:layout_toEndOf="@+id/textViewKDist"
+                    android:layout_width="220dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="30dp"/>
+
+                <TextView
+                    android:id="@+id/textViewKVal"
+                    android:layout_width="90dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="60dp"
+                    android:text="k :"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:gravity="end"
+                    android:textColor="#000"
+                    android:background="@color/colorWhite"/>
+
+                <EditText
+                    android:id="@+id/editText4"
+                    android:layout_width="220dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_toEndOf="@+id/textViewKVal"
+                    android:background="#fff"
+                    android:text="1"
+                    android:gravity="end"
+                    android:inputType="numberDecimal"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="10dp"/>
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/divider3"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_below="@+id/knnRelativeLayout"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:background="@color/colorBlack" />
+
+            <RelativeLayout
+                android:id="@+id/svmRelativeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/knnRelativeLayout"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:id="@+id/svmParametersTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="SVM Extra Parameters" />
+
+                <TextView
+                    android:id="@+id/textViewSVMKernel"
+                    android:layout_width="90dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="35dp"
+                    android:text="Kernel :"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:gravity="end"
+                    android:textColor="#000"
+                    android:background="@color/colorWhite"/>
+
+                <Spinner
+                    android:id="@+id/spinner3"
+                    android:layout_toEndOf="@+id/textViewSVMKernel"
+                    android:layout_width="220dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="35dp"
+                    android:layout_marginEnd="20dp"/>
+
+                <TextView
+                    android:id="@+id/textViewSVMc"
+                    android:layout_below="@+id/textViewSVMKernel"
+                    android:layout_width="90dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="5dp"
+                    android:text="c :"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:gravity="end"
+                    android:textColor="#000"
+                    android:background="@color/colorWhite"/>
+
+                <EditText
+                    android:id="@+id/editText3"
+                    android:layout_width="220dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="65dp"
+                    android:layout_toEndOf="@+id/textViewSVMc"
+                    android:background="#fff"
+                    android:text="1"
+                    android:gravity="end"
+                    android:inputType="numberDecimal"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="10dp"/>
+
+                <TextView
+                    android:id="@+id/textViewSVMEps"
+                    android:layout_below="@+id/textViewSVMc"
+                    android:layout_width="90dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="5dp"
+                    android:text="Epsilon :"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:gravity="end"
+                    android:textColor="#000"
+                    android:background="@color/colorWhite"/>
+
+                <EditText
+                    android:id="@+id/editText5"
+                    android:layout_width="220dp"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="95dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_toEndOf="@+id/textViewSVMEps"
+                    android:background="#fff"
+                    android:hint="Epsilon"
+                    android:inputType="numberDecimal"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="10dp"
+                    android:gravity="end"
+                    android:text="1.0E-12" />
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/divider4"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_below="@+id/svmRelativeLayout"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="20dp"
+                android:background="@color/colorBlack" />
+
+            <RelativeLayout
+                android:id="@+id/randomForestRelativeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/svmRelativeLayout"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/randomForestParametersTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="RandomForest Extra Parameters" />
+
+                <TextView
+                    android:id="@+id/textViewRFMax"
+                    android:layout_width="150dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="30dp"
+                    android:paddingEnd="10dp"
+                    android:text="Max Depth :"
+                    android:gravity="end"
+                    android:textColor="#000"
+                    android:background="@color/colorWhite"/>
+
+                <EditText
+                    android:id="@+id/editText11"
+                    android:layout_toEndOf="@id/textViewRFMax"
+                    android:layout_width="160dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="#fff"
+                    android:ems="10"
+                    android:text="0"
+                    android:gravity="end"
+                    android:inputType="numberDecimal"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="10dp"/>
+
+                <TextView
+                    android:id="@+id/textViewRFNDP"
+                    android:layout_width="150dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="60dp"
+                    android:text="NumDecimal Places :"
+                    android:gravity="center"
+                    android:textColor="#000"
+                    android:background="@color/colorWhite"/>
+
+                <EditText
+                    android:id="@+id/editText12"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_toEndOf="@id/textViewRFNDP"
+                    android:background="#fff"
+                    android:ems="10"
+                    android:gravity="end"
+                    android:text="2"
+                    android:inputType="numberDecimal"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="10dp" />
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/divider5"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_below="@+id/randomForestRelativeLayout"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:background="@color/colorBlack" />
+
+            <RelativeLayout
+                android:id="@+id/neuralNetworkRelativeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/randomForestRelativeLayout"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/neuralNetworkParametersTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="5dp"
+                    android:text="NeuralNetwork Extra Parameters" />
+
+                <TextView
+                    android:id="@+id/textViewNNSeed"
+                    android:layout_width="120dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="30dp"
+                    android:text="Seed :"
+                    android:gravity="end"
+                    android:textColor="#000"
+                    android:background="@color/colorWhite"/>
+
+                <EditText
+                    android:id="@+id/editText10"
+                    android:layout_toEndOf="@+id/textViewNNSeed"
+                    android:layout_width="190dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@color/text"
+                    android:ems="10"
+                    android:text="0"
+                    android:gravity="end"
+                    android:inputType="numberDecimal"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="10dp"/>
+
+                <TextView
+                    android:id="@+id/textViewNNLearn"
+                    android:layout_width="120dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="60dp"
+                    android:text="Learning Rate :"
+                    android:gravity="end"
+                    android:textColor="#000"
+                    android:background="@color/colorWhite"/>
+
+                <EditText
+                    android:id="@+id/editText8"
+                    android:layout_toEndOf="@+id/textViewNNLearn"
+                    android:layout_width="190dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="60dp"
+                    android:background="@color/text"
+                    android:ems="10"
+                    android:text="0.3"
+                    android:gravity="end"
+                    android:inputType="numberDecimal"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="10dp"/>
+
+                <TextView
+                    android:id="@+id/textViewNNMom"
+                    android:layout_width="120dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="90dp"
+                    android:text="Momentum :"
+                    android:gravity="end"
+                    android:textColor="#000"
+                    android:background="@color/colorWhite"/>
+
+                <EditText
+                    android:id="@+id/editText9"
+                    android:layout_toEndOf="@+id/textViewNNMom"
+                    android:layout_width="190dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="90dp"
+                    android:layout_marginStart="10dp"
+                    android:background="@color/text"
+                    android:ems="10"
+                    android:text="0.2"
+                    android:inputType="numberDecimal"
+                    android:gravity="end"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="10dp"/>
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/divider6"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_below="@+id/neuralNetworkRelativeLayout"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:background="@color/colorBlack" />
+
+            <RelativeLayout
+                android:id="@+id/decisionTreeRelativeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/neuralNetworkRelativeLayout"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/decisionTreeParametersTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="5dp"
+                    android:text="DecisionTree Extra Parameters" />
+
+                <TextView
+                    android:id="@+id/textViewDTSeed"
+                    android:layout_width="150dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="30dp"
+                    android:text="Seed :"
+                    android:gravity="end"
+                    android:textColor="#000"
+                    android:background="@color/colorWhite"/>
+
+                <EditText
+                    android:id="@+id/editText6"
+                    android:layout_toEndOf="@+id/textViewDTSeed"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@color/text"
+                    android:ems="10"
+                    android:text="1"
+                    android:gravity="end"
+                    android:inputType="numberDecimal"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="10dp"/>
+
+                <TextView
+                    android:id="@+id/textViewDTCF"
+                    android:layout_width="150dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="60dp"
+                    android:text="Confidence Factor :"
+                    android:gravity="end"
+                    android:textColor="#000"
+                    android:background="@color/colorWhite"/>
+
+                <EditText
+                    android:id="@+id/editText7"
+                    android:layout_toEndOf="@+id/textViewDTCF"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@color/text"
+                    android:ems="10"
+                    android:text="0.25"
+                    android:inputType="numberDecimal"
+                    android:paddingStart="5dp"
+                    android:gravity="end"
+                    android:paddingEnd="10dp"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <View
+        android:id="@+id/divider7"
+        android:layout_below="@+id/parameterScroll"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/colorBlack" />
+
+    <Button
+        android:id="@+id/buttonShowResults"
+        android:layout_below="@+id/divider7"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="Dısplay Confusıon Matrıx"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="5dp"
+        android:textStyle="bold"/>
+
+    <RelativeLayout
+        android:id="@+id/bottomRL"
+        android:layout_below="@+id/buttonShowResults"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/colorWhite"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/tvB1"
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:text="Correctly Classified Instances :" />
+
+        <TextView
+            android:id="@+id/tvB2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/tvB1"
+            android:layout_alignParentEnd="true"
+            android:textColor="#000"
+            android:text="---" />
+
+        <TextView
+            android:id="@+id/tvB3"
+            android:layout_below="@+id/tvB1"
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:text="Incorrectly Classified Instances :" />
+
+        <TextView
+            android:id="@+id/tvB4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvB2"
+            android:layout_toEndOf="@+id/tvB3"
+            android:layout_alignParentEnd="true"
+            android:textColor="#000"
+            android:text="---" />
+
+        <TextView
+            android:id="@+id/tvB5"
+            android:layout_below="@+id/tvB3"
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:text="Kappa Statistic :" />
+
+        <TextView
+            android:id="@+id/tvB6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvB4"
+            android:layout_toEndOf="@+id/tvB5"
+            android:layout_alignParentEnd="true"
+            android:textColor="#000"
+            android:text="---" />
+
+        <TextView
+            android:id="@+id/tvB7"
+            android:layout_below="@+id/tvB5"
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:text="Mean Absolute Error :" />
+
+        <TextView
+            android:id="@+id/tvB8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvB6"
+            android:layout_toEndOf="@+id/tvB7"
+            android:layout_alignParentEnd="true"
+            android:textColor="#000"
+            android:text="---" />
+
+        <TextView
+            android:id="@+id/tvB9"
+            android:layout_below="@+id/tvB7"
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:text="Root Mean Squared Error :" />
+
+        <TextView
+            android:id="@+id/tvB10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvB8"
+            android:layout_toEndOf="@+id/tvB9"
+            android:layout_alignParentEnd="true"
+            android:textColor="#000"
+            android:text="---" />
+
+        <TextView
+            android:id="@+id/tvB11"
+            android:layout_below="@+id/tvB9"
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:text="Relative Absolute Error :" />
+
+        <TextView
+            android:id="@+id/tvB12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvB10"
+            android:layout_toEndOf="@+id/tvB11"
+            android:layout_alignParentEnd="true"
+            android:textColor="#000"
+            android:text="---" />
+
+        <TextView
+            android:id="@+id/tvB13"
+            android:layout_below="@+id/tvB11"
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:text="Root Relative Squared Error :" />
+
+        <TextView
+            android:id="@+id/tvB14"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvB12"
+            android:layout_toEndOf="@+id/tvB13"
+            android:layout_alignParentEnd="true"
+            android:textColor="#000"
+            android:text="---" />
+
+        <TextView
+            android:id="@+id/tvB15"
+            android:layout_below="@+id/tvB13"
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:text="Coverage of cases (0.95 level) :" />
+
+        <TextView
+            android:id="@+id/tvB16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvB14"
+            android:layout_toEndOf="@+id/tvB15"
+            android:layout_alignParentEnd="true"
+            android:textColor="#000"
+            android:text="---" />
+
+        <TextView
+            android:id="@+id/tvB17"
+            android:layout_below="@+id/tvB15"
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:text="Mean Relative Region Size (0.95 level) :" />
+
+        <TextView
+            android:id="@+id/tvB18"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvB16"
+            android:layout_toEndOf="@+id/tvB17"
+            android:layout_alignParentEnd="true"
+            android:textColor="#000"
+            android:text="---" />
+
+        <TextView
+            android:id="@+id/tvB19"
+            android:layout_below="@+id/tvB17"
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:text="Total Number of Instances :" />
+
+        <TextView
+            android:id="@+id/tvB20"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvB18"
+            android:layout_toEndOf="@+id/tvB19"
+            android:layout_alignParentEnd="true"
+            android:textColor="#000"
+            android:text="---" />
+
+
+    </RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
+</RelativeLayout>

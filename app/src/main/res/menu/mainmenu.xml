@@ -1,0 +1,13 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+
+    <item
+        android:id="@+id/action_about"
+        android:title="About">
+    </item>
+    <item
+        android:id="@+id/tutorial"
+        android:title="Tutorial">
+    </item>
+
+</menu>
